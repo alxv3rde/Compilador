@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\iconAppTraductor.png" />
+    <None Remove="Resources\SVG\CerrarV.png" />
+    <None Remove="Resources\SVG\closesvg.png" />
+    <None Remove="Resources\SVG\coding.png" />
+    <None Remove="Resources\SVG\cross.png" />
+    <None Remove="Resources\SVG\iconAppTraductor.png" />
+    <None Remove="Resources\SVG\iconError.png" />
+    <None Remove="Resources\SVG\iconTraductor.png" />
+    <None Remove="Resources\SVG\imgBtnTraducir.png" />
+    <None Remove="Resources\SVG\sasa.png" />
+    <None Remove="Resources\SVG\testicon.png" />
+    <None Remove="Resources\SVG\translatec.png" />
+    <None Remove="Resources\SVG\translatec2.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\SVG\CerrarV.png" />
+    <Resource Include="Resources\SVG\cross.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AvalonEdit" Version="6.3.0.90" />
+    <PackageReference Include="FontAwesome.Sharp" Version="6.6.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\SVG\closesvg.png" />
+    <Resource Include="Resources\SVG\coding.png" />
+    <Resource Include="Resources\SVG\iconAppTraductor.png" />
+    <Resource Include="Resources\SVG\iconError.png" />
+    <Resource Include="Resources\SVG\iconTraductor.png" />
+    <Resource Include="Resources\SVG\imgBtnTraducir.png" />
+    <Resource Include="Resources\SVG\sasa.png" />
+    <Resource Include="Resources\SVG\testicon.png" />
+    <Resource Include="Resources\SVG\translatec.png" />
+    <Resource Include="Resources\SVG\translatec2.png" />
+  </ItemGroup>
+
+</Project>

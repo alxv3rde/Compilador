@@ -1,0 +1,317 @@
+﻿<UserControl x:Class="Compilador_AAA.Views.TranslatorView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:Compilador_AAA.Views"
+             mc:Ignorable="d"
+             d:DesignHeight="450"
+             d:DesignWidth="800"
+             xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+             xmlns:avalonEdit="http://icsharpcode.net/sharpdevelop/avalonedit">
+    
+    <Grid Grid.Row="1"
+          x:Name="ChangePanel"
+          Margin="0,3,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70*"/>
+            <RowDefinition Height="6"/>
+            <RowDefinition Height="30*"/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="110" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+
+                    <RowDefinition Height="2" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Border Grid.Row="0"
+                    Background="white" Name="originalheadercolor"/>
+            <Border BorderBrush="{StaticResource BorderDarkGrayMainBG}"
+                    BorderThickness="0,0,1,1"
+                    Grid.Row="1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="22" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+<!--ocultar o cambiar color linea verde-->
+                    <Grid Grid.Row="0">
+                            <Border Background="white"
+                                BorderBrush="gray"
+                                BorderThickness="2,1,1,2" />
+                        <StackPanel Grid.Row="0"
+                                    VerticalAlignment="Center"
+                                    Orientation="Horizontal"
+                                    Margin="3,0">
+
+                            <fa:IconImage Icon="Code"
+                                          Height="17" Visibility="Hidden"
+                                          Width="17"
+                                          Foreground="White"
+                                          Margin="0,0,0,3" />
+                                <Label Content="Mi Lenguaje"
+                                       Margin="-1,-4"
+                                       FontWeight="Medium"
+                                       FontSize="12"
+                                       Foreground="Black" />
+
+                            </StackPanel>
+                            <Button HorizontalAlignment="Right"
+                                    Height="20"
+                                    Content="RT:ON"
+                                    Background="Gray"
+                                    VerticalAlignment="Center" Visibility="Hidden" Name="btnDebug" Click="btnDebug_Click"></Button>
+                        </Grid>
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="21" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Column="0"
+                                Background="white"
+                                BorderBrush="Gray"
+                                BorderThickness="1,0,1,0" />
+                        <Grid Margin="-2198,680,1443,-680" />
+                        <avalonEdit:TextEditor Grid.Column="1"
+                                               x:Name="OriginalEditor"
+                                               ShowLineNumbers="True"
+                                               FontFamily="consolas"
+                                               FontSize="13"
+                                               Background="White"
+                                               Foreground="Black" GotFocus="OriginalEditor_GotFocus" LostFocus="OriginalEditor_LostFocus" SyntaxHighlighting="true" TextChanged="OriginalEditor_TextChanged"/>
+                    </Grid>
+
+                </Grid>
+            </Border>
+            </Grid>
+
+            <Grid VerticalAlignment="Center"
+                  Grid.Column="1">
+                <Button 
+                        Cursor="Hand"
+                        Name="btnTraducir"
+                        Click="btnTraducir_Click"
+                        Height="30"
+                        Width="70" Content="Traducir">
+                    
+
+                </Button>
+            </Grid>
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+
+                    <RowDefinition Height="2" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+
+
+                <Border Grid.Row="0"
+                        Background="white"  Name="translatedheadercolor" />
+                <Border BorderBrush="{StaticResource BorderDarkGrayMainBG}"
+                        BorderThickness="0,0,1,1"
+                        Grid.Row="1">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="22" />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+
+                        <Grid Grid.Row="0">
+                            <Border Background="white"
+                                    BorderBrush="Gray"
+                                    BorderThickness="2,1,1,2" />
+                            <StackPanel Grid.Row="0"
+                                        VerticalAlignment="Center"
+                                        Orientation="Horizontal"
+                                        Margin="3,0">
+
+                                <Label Content="VB"
+                                       FontSize="14" Visibility="Hidden"
+                                       Margin="-4,-7"
+                                       Foreground="White"
+                                       FontWeight="DemiBold" />
+                                <Label Content="Visual Basic"
+                                       Margin="-2,-5"
+                                       FontWeight="Medium"
+                                       FontSize="12"
+                                       Foreground="Black" />
+                            </StackPanel>
+                        </Grid>
+                        <Grid Grid.Row="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="389*" />
+                                <RowDefinition Height="21*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="21" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Border Grid.Column="0"
+                                    Background="White"
+                                    BorderBrush="Gray"
+                                    BorderThickness="1,0,1,0"
+                                    Grid.RowSpan="2" />
+                            <Grid Margin="-2198,291,1443,-680"
+                                  Grid.Row="1" />
+                            <avalonEdit:TextEditor Grid.Column="1"
+                                                   x:Name="TranslatedEditor"
+                                                   FontFamily="consolas"
+                                                   FontSize="13"
+                                                   Background="White"
+                                                   Foreground="Black"
+                                                   Grid.RowSpan="2" GotFocus="TranslatedEditor_GotFocus" LostFocus="TranslatedEditor_LostFocus" IsReadOnly="True"/>
+                        </Grid>
+
+                    </Grid>
+                </Border>
+            </Grid>
+           
+        </Grid>
+        <GridSplitter Grid.Row="1"
+                      HorizontalAlignment="Stretch"
+                      VerticalAlignment="Center"
+                      Background="Transparent"
+                      ShowsPreview="True"
+                      Height="5" />
+
+        <Border Grid.Row="2" Name="ErrorsWindow" GotFocus="ErrorsWindow_GotFocus" LostFocus="ErrorsWindow_LostFocus" Margin="0,0,0,6" BorderBrush="Gray" Background="{StaticResource DarkGrayMainBG}" BorderThickness="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Border Name="errorlistheadercolor"/>
+                
+                <Grid Grid.Row="2"
+                      Margin="1,0">
+                    <ListView SizeChanged="lvErrores_SizeChanged"
+                              Name="lvErrores" Background="White"  BorderThickness="0">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Path=.}"
+                                           TextWrapping="Wrap"></TextBlock>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="ListViewItem">
+                                <Setter Property="SnapsToDevicePixels"
+                                        Value="True" />
+                                <Setter Property="OverridesDefaultStyle"
+                                        Value="True" />
+                                <Setter Property="Foreground"
+                                        Value="Black" />
+                                <Setter Property="MinHeight"
+                                        Value="22" />
+                                <Setter Property="VerticalContentAlignment"
+                                        Value="Center" />
+                                <Setter Property="Template" >
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="ListViewItem">
+                                            <Border x:Name="Border"
+                                                    BorderBrush="Transparent"
+                                                    BorderThickness="1"
+                                                    Background="Transparent" Padding="0,2">
+                                                <GridViewRowPresenter Content="{TemplateBinding Content}" />
+                                            </Border>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsSelected"
+                                                         Value="True">
+                                                    <Setter TargetName="Border"
+                                                            Property="Background"
+                                                            Value="gray" />
+                                                    <Setter TargetName="Border"
+                                                            Property="BorderBrush"
+                                                            Value="transparent" />
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="Background"
+                                        Value="Transparent" />
+                                <Setter Property="Padding"
+                                        Value="5" />
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                        <ListView.View >
+                            
+                            <GridView >
+                                <GridView.ColumnHeaderContainerStyle>
+                                    <Style
+                                           TargetType="{x:Type GridViewColumnHeader}">
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="{x:Type GridViewColumnHeader}">
+                                                    <Border BorderThickness="0,0,1,1"
+                                                            BorderBrush="Gray"
+                                                            Background="Transparent">
+                                                        <TextBlock x:Name="ContentHeader"
+                                                                   Text="{TemplateBinding Content}"
+                                                                   Padding="5,2,5,2"
+                                                                   Width="{TemplateBinding Width}"
+                                                                   TextAlignment="Left"
+                                                                   Foreground="Black"/>
+                                                    </Border>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                        <Setter Property="OverridesDefaultStyle"
+                                                Value="True" />
+                                        <Setter Property="Foreground"
+                                                Value="Black" />
+                                        <Setter Property="FontFamily"
+                                                Value="Segoe UI" />
+                                        <Setter Property="FontSize"
+                                                Value="12" />
+                                        <Setter Property="Background"
+                                                Value="Transparent" />
+
+                                    </Style>
+                                </GridView.ColumnHeaderContainerStyle>
+                                <GridViewColumn DisplayMemberBinding="{Binding emp1}" 
+                                    Width="25"/>
+                                <GridViewColumn
+                                                Width="26">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Image Source="{Binding Image}"
+                                                   Width="15"
+                                                   Height="15"
+                                                   HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn Header=""
+                                                Width="55"
+                                                DisplayMemberBinding="{Binding Code}" />
+                                <GridViewColumn Header="Descripción"
+                                                Width="600">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock TextWrapping="Wrap" Text="{Binding Description}"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn Header="Línea"
+                                                Width="35"
+                                                DisplayMemberBinding="{Binding Line}" />
+                                <GridViewColumn Width="25"
+                                                DisplayMemberBinding="{Binding emp2}" />
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+        
+</UserControl>

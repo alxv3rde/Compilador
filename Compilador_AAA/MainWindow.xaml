@@ -1,0 +1,60 @@
+﻿<Window x:Class="Compilador_AAA.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Compilador_AAA"
+        mc:Ignorable="d"
+        Background="White"
+        xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+        UseLayoutRounding="True"
+        WindowStyle="ThreeDBorderWindow"
+        Title="MainView"
+        Height="620"
+        Width="1260"
+        RenderOptions.BitmapScalingMode="HighQuality"
+        WindowStartupLocation="CenterScreen"  Activated="Window_Activated" Deactivated="Window_Deactivated">
+   
+    <Border Name="MainBorder" BorderBrush="{StaticResource BorderDarkGrayMainBG}" BorderThickness="0" >
+        <Grid Name="MainPanel"
+              
+              Background="DarkGray">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="18" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Margin="0,0,0,0"  Background="White">
+                <StackPanel Orientation="Horizontal"
+            VerticalAlignment="top"
+            Margin="10,0,0,0">
+                    <Menu Background="Transparent"
+          Foreground="Black"
+          VerticalAlignment="Center"
+          FontSize="12"
+          FontWeight="Regular">
+                        <!--<MenuItem Header="Traductor"
+                  Style="{StaticResource MenuItemsDarkBG}"
+                  x:Name="TraductorMenu"
+                  PreviewMouseLeftButtonDown="TraductorMenu_PreviewMouseLeftButtonDown">
+                        </MenuItem>-->
+                        <MenuItem Header="Ayuda">
+                            <MenuItem x:Name="Palabras_Reservadas"
+                      Header="Palabras reservadas"
+                      PreviewMouseLeftButtonDown="Palabras_Reservadas_PreviewMouseLeftButtonDown" />
+                            <MenuItem Header="Ejemplos de mi lenguaje" Name="Ejemplos" PreviewMouseLeftButtonDown="Ejemplos_PreviewMouseLeftButtonDown"/>
+                        </MenuItem>
+                        <MenuItem Header="Acerca de"
+                                  Name="AcercaDe"
+                                  PreviewMouseLeftButtonDown="AcercaDe_PreviewMouseLeftButtonDown"
+                                  
+                  Style="{StaticResource MenuItemsDarkBG}" />
+                    </Menu>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="1"
+                  Name="ContentPanel"
+                  Margin="10,0" />
+        </Grid>
+    </Border>
+   
+</Window>
